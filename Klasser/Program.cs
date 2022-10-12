@@ -24,13 +24,13 @@
             List<Person> listPersons = new List<Person>();
 
             // ForEach loop för att gå igenom arrayen
-            foreach(Person personPekareILoop in arrUtbildare)
+            foreach (Person personPekareILoop in arrUtbildare)
             {
                 //Inkludera objektet till listan av persons
                 listPersons.Add(personPekareILoop);
 
-                Console.WriteLine( personPekareILoop.name );
-                Console.WriteLine( personPekareILoop.age );
+                Console.WriteLine(personPekareILoop.name);
+                Console.WriteLine(personPekareILoop.age);
                 personPekareILoop.Birthday();
                 Console.WriteLine(personPekareILoop.age);
             }
@@ -68,6 +68,20 @@
 
             //Anropar funktion för att skriva ut statisk lista
             PrintList();
+
+            //Marriage --------------------------------
+            //Skapar ny referens
+            Person p1 = arrUtbildare[0];
+            Person p2 = arrUtbildare[1];
+
+            //Anropar marriage för p1
+            Console.WriteLine("Person 1 status: {0}", p1.partner);
+            p1.Marriage(p2);
+            Console.WriteLine("{0} är gift med {1}", p1.name, p1.partner.name);
+            Console.WriteLine("{0} är gift med {1}", p2.name, p2.partner.name);
+            
+            p1.partner.partner.partner.partner.partner.partner.partner.age = 99;
+
 
         }
 

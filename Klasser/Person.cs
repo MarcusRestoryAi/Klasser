@@ -14,6 +14,8 @@ namespace Klasser
         private string name1;
         private int age1;
 
+        public Person partner;
+
         //Attribut
         public string name { get => name1; set => name1 = value.ToUpper(); }
         public int age { get => age1; set => age1 = value; }
@@ -24,6 +26,7 @@ namespace Klasser
             //Tilldela värden till attributen
             this.name = name;
             this.age = age;
+            this.partner = null;
 
             //Tilldela obejktet till listan people
             Person.people.Add(this);
@@ -33,6 +36,16 @@ namespace Klasser
         public void Birthday()
         {
             age++;
+        }
+
+        //Metod för marriage
+        public void Marriage(Person partner)
+        {
+            //Refererar till vår nya partner
+            this.partner = partner;
+
+            //Referear tillbaka till oss via partner marriage
+            partner.partner = this;
         }
     }
 }
